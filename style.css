@@ -1,0 +1,259 @@
+/* =========================================
+   Global Styles & Typography
+   ========================================= */
+
+/* Ensure smooth scrolling for better navigation between sections [cite: 39] */
+html {
+    scroll-behavior: smooth; 
+}
+
+/* Define consistent colors, fonts, and spacing for a professional look  */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #121212; /* Dark mode background */
+    color: #e0e0e0;            /* High-contrast light text */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #2a2a2a;
+    margin: 2rem 0;
+}
+
+/* Wrapper to contain the layout */
+body > header, 
+body > main, 
+body > footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* =========================================
+   Navigation & Header
+   ========================================= */
+
+/* Use CSS Flexbox for layout structuring [cite: 36] */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    padding: 0;
+}
+
+/* Style navigation links for better usability [cite: 35] */
+nav a {
+    text-decoration: none;
+    color: #9e9e9e;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Add hover effects for buttons and links [cite: 38] */
+nav a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   Main Content & Media
+   ========================================= */
+
+/* Make sure images and videos are responsive [cite: 37] */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+main section {
+    margin-bottom: 4rem;
+}
+
+main h2 {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+/* Layout for the Bio Section using CSS Grid [cite: 36] */
+main section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Circular profile image matching the wireframe */
+aside img {
+    border-radius: 50%;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 1px solid #333;
+}
+
+/* =========================================
+   Footer Layout
+   ========================================= */
+
+/* Grid layout for the three footer columns [cite: 36] */
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    font-size: 0.9rem;
+}
+
+footer > div {
+    display: flex;
+    flex-direction: column;
+}
+
+footer h3, footer p strong {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+footer address {
+    font-style: normal;
+    color: #a0a0a0;
+    line-height: 1.8;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+/* Circular Social Media Buttons */
+footer div:first-of-type ul {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+footer div:first-of-type ul a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #444;
+    text-align: center;
+    line-height: 38px;
+    transition: all 0.3s ease;
+}
+
+footer div:first-of-type ul a:hover {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+/* =========================================
+   Forms (Contact Page)
+   ========================================= */
+form div {
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    color: #ffffff;
+    border-radius: 4px;
+    font-family: inherit;
+    margin-top: 0.5rem;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #666;
+}
+
+button {
+    background-color: #ffffff;
+    color: #121212;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   Media Queries (@media) for Responsiveness [cite: 36]
+   ========================================= */
+
+/* Adjust styles for mobile and tablet views [cite: 36] */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Mobile-friendly navigation menu [cite: 38] */
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.2rem;
+    }
+
+    /* Stack the bio and image on mobile */
+    main section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    aside {
+        order: -1; /* Moves the image above the text on mobile */
+    }
+
+    aside img {
+        max-width: 250px;
+    }
+
+    /* Stack footer columns */
+    footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    footer div:first-of-type ul {
+        justify-content: center;
+    }
+}
